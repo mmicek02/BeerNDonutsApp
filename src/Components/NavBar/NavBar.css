@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%
+}
+
+.logo{
+    cursor: pointer;
+    margin-right: auto
+}
+
+.link__option {
+    display: inline-block;
+    padding: 0px 20px;
+
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+
+    transition: all 0.3s ease 0s;
+}
+
+.link__option:hover {
+    color: #ff51ff
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        display: block;
+        margin: auto;
+        text-align: center;
+        padding: 20px 15%
+    }
+    header {
+        display: block;
+        margin: auto;
+    }
+    h1 {
+        font-size: 1.5em
+    }
+    .link__option {
+        display: inline-block;
+        margin: auto;
+        padding: 0px .5em;
+        font-size: 20px;
+        text-align: center;
+    }
+}
