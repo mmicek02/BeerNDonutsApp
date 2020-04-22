@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.beer__form {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.beer__form select {
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 5px rgb(0, 0, 0, .5);
+    outline: none;
+}
+
+.beerSubmit {
+    padding: 10px;
+    width: 175px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 5px rgb(0, 0, 0, .5);
+    outline: none;
+}
