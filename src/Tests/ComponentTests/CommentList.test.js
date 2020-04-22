@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import App from './App'
-import { BrowserRouter } from 'react-router-dom';
+import CommentList from '../../Components/CommentList/CommentList'
 
-describe(`App component`, () => {
+describe(`CommentList component`, () => {
 
   it('renders without errors', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>,div);
+            <CommentList />,div);
     ReactDOM.unmountComponentAtNode(div);
   })
 
