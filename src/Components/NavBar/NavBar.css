@@ -14,8 +14,11 @@ header {
 .logo{
     cursor: pointer;
     margin-right: auto
+} 
+.nav__links {
+    display: flex;
+    align-items: center;
 }
-
 .link__option {
     display: inline-block;
     padding: 0px 20px;

@@ -1,4 +1,5 @@
 import React from 'react'
+import './CommentList.css'
 
 class CommentList extends React.Component {
     render(){
