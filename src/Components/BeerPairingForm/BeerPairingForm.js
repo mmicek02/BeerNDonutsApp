@@ -1,5 +1,6 @@
 import React from 'react'
-import PairingResults from '../PairingResults/PairingResults'
+import { Link } from 'react-router-dom'
+
 import './BeerPairingForm.css'
 
 class BeerPairingForm extends React.Component {
@@ -58,8 +59,8 @@ class BeerPairingForm extends React.Component {
                 <div>
                     <select 
                         name='beer-style' 
-                        id='beer-style'
-                        onChange={e => this.updateBeerValue(e.target.value)}>
+                        id='beer-style'>
+                        
                         <option 
                             value="ipa">IPA</option>
                         <option value="brown-ale">Bronwn Ale</option>
@@ -69,9 +70,10 @@ class BeerPairingForm extends React.Component {
                         <option value="wheat-ale">Wheat Ale</option>
                     </select>
                 </div>
-                <button
-                    className="beerSubmit" 
-                    onClick={PairingResults}>Let's Get Tasting</button>
+
+                <Link
+                    className="beerSubmit"
+                    to='/pairing-results'> Let's Get Tasting</Link>
             </form>
         )
     }

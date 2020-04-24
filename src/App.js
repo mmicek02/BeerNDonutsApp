@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <>
       <Route
-        path="/parings" 
+        path="/pairings" 
         component={SelectBeer}/>
       <Route
         path="/pairing-results"
