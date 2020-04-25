@@ -11,13 +11,12 @@ class PairingResults extends React.Component {
                     <div className="flex-item flex-item-1">
                         Donut
                     </div>
+                    <h3>{'&'}</h3>
                     <div className="flex-item flex-item-2">
                         Beer
                     </div>
                     <br />
                 </div>
-                <AddCommentButton />
-                <CommentList />
             </>
         )
     }

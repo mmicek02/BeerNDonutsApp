@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import NavBar from './Components//NavBar/NavBar';
 import SelectBeer from './Routes/SelectBeer/SelectBeer'
 import { Route } from 'react-router-dom';
-import PairingResults from './Components/PairingResults/PairingResults';
+import PairingResultsPage from './Routes/PairingResultsPage/PairingResultsPage';
 import BeerStyles from './Components/BeerStyles/BeerStyles';
+import DonutStyles from './Components/DonutStyle/DonutStyle';
 
 class App extends Component {
   renderMainRoutes() {
@@ -14,10 +15,13 @@ class App extends Component {
         component={SelectBeer}/>
       <Route
         path="/pairing-results"
-        component={PairingResults} />
+        component={PairingResultsPage} />
       <Route 
         path="/beer-styles"
         component={BeerStyles} />
+      <Route 
+        path="/donut-styles"
+        component={DonutStyles} />
       </>
     )
   }

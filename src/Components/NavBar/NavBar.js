@@ -26,7 +26,7 @@ class NavBar extends React.Component {
                         </Link>
                         <Link 
                             className="link__option"
-                            to='/donut-types'>
+                            to='/donut-styles'>
                                 Donuts
                         </Link>
                     </ul>

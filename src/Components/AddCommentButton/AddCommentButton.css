@@ -3,3 +3,10 @@
     margin: 0;
     padding: 0;
 }
+.add-comment-button {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 33%;
+    justify-content: flex-end;
+    align-items: center;
+}
