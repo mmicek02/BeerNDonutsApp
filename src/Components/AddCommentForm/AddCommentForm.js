@@ -13,7 +13,7 @@ class AddCommentForm extends React.Component {
             onSubmit={this.handleSubmit}
           >
             <div className='text'>
-              <Textarea
+              <input
                 required
                 aria-label='Type a comment...'
                 name='text'
@@ -21,11 +21,11 @@ class AddCommentForm extends React.Component {
                 cols='30'
                 rows='3'
                 placeholder='Type a comment..'>
-              </Textarea>
+              </input>
             </div>
-            <Button type='submit'>
+            <button type='submit'>
               Post comment
-            </Button>
+            </button>
           </form>
         )
       }
