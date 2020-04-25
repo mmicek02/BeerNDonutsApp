@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20%;
+    margin: 1rem;
+}
+
+.flex-item {
+    width: 500px;
+    padding: 5%;
+    border: 2px solid #333;
+    background-color: #dfdfdf;
+
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.landing-page-component {
+    padding: 50%;
+}
