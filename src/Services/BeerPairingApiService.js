@@ -23,7 +23,7 @@ const BeerPairingApiService = {
           : res.json()
       )
   },
-  getArticleComments(beerId) {
+  getBeerPairingsComments(beerId) {
     return fetch(`${config.API_ENDPOINT}/beerpairings/${beerId}/comments`, {
       headers: {
       },

@@ -1,22 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
+import BeerPairingApiService from '../../Services/BeerPairingApiService'
 import BeerPairingContext from '../../Context/BeerPairingContext'
 import { Link } from 'react-router-dom'
 
 import './BeerPairingForm.css'
 
-class BeerPairingForm extends React.Component {
+class BeerPairingForm extends Component {
     static contextType = BeerPairingContext;
+
+    componentDidMount() {
+        this.context.clearError()
+        BeerPairingApiService.getBeerPairings()
+            .then(this.context.setBeerPairings)
+            .catch(this.context.setError)
+    }
+
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             style: '',
             touched: false,
         }
     }
 
-    updateBeerStyle = (BeerStyle) => {
+    updateBeerStyle = (beer) => {
         this.setState({
-            style: BeerStyle,
+            id: beer.id,
+            style: beer.style,
             touched: true,
         })
     }
@@ -25,12 +36,13 @@ class BeerPairingForm extends React.Component {
         ev.preventDeafault();
         console.log(this.state)
         const pairingInfo = {
-            style: this.state.beerStyle
+            id: this.state.id,
+            style: this.state.style
         }
 
-        const url = 'http://localhost:8000/api/beerpairings/';
+        const url = 'http://localhost:8000/api/beerpairings';
         const options = {
-            method: 'POST',
+            method: 'GET',
             body: JSON.stringify.apply(pairingInfo),
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +59,7 @@ class BeerPairingForm extends React.Component {
         })
         .then(resJson => {
             this.context.users.push(resJson)
-            this.props.history.push(`/paring-results`)
+            this.props.history.push(`/`)
         })
         .catch(err => {
             this.setState({
@@ -56,6 +68,7 @@ class BeerPairingForm extends React.Component {
         })
     }
     render() {
+        const { beerpairings = [] } = this.context
         return(
             <form 
                 className='beer__form'
@@ -67,7 +80,7 @@ class BeerPairingForm extends React.Component {
                         onChange={ev => this.updateBeerStyle(ev.target.value)}>
                         
                         <option value="">Choose a Beer</option>
-                            {this.context.beerpairings.map(beerName =>
+                            {beerpairings.map(beerName =>
                                 <option key={beerName.id} value={beerName.id}>
                                     {beerName.style}
                                 </option>)}

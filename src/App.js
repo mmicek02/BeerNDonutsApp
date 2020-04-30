@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import NavBar from './Components//NavBar/NavBar';
-import SelectBeer from './Routes/SelectBeer/SelectBeer'
 import { Route } from 'react-router-dom';
+
+import NavBar from './Components/NavBar/NavBar';
+
+import SelectBeer from './Routes/SelectBeer/SelectBeer'
+import LandingPage from './Routes/LandingPage/LandingPage';
 import PairingResultsPage from './Routes/PairingResultsPage/PairingResultsPage';
+
 import BeerStyles from './Components/BeerStyles/BeerStyles';
 import DonutStyles from './Components/DonutStyle/DonutStyle';
-import LandingPage from './Routes/LandingPage/LandingPage';
-import config from './config'
 import AddCommentForm from './Components/AddCommentForm/AddCommentForm';
+
+import config from './config'
+
 
 class App extends Component {
   state = {

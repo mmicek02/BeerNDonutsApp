@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const BeerPairingContext = React.createContext({
-    beerpairings: [],
+    beerPairings: [],
     comments: [],
     error: null,
     setError: () => {},
@@ -16,6 +16,11 @@ export default BeerPairingContext
 
 export class BeerPairingProvider extends Component {
 
+    state = {
+        beerPairings: [],
+        error: null,
+    };
+
     setError = error => {
         console.log(error)
         this.setState({ error })
@@ -25,8 +30,8 @@ export class BeerPairingProvider extends Component {
         this.setState({ error: null })
     }
 
-    setBeerPairing = beerpairings => {
-        this.setState({ beerpairings })
+    setBeerPairings = beerPairings => {
+        this.setState({ beerPairings })
     }
 
     addComment = comment => {
@@ -38,7 +43,7 @@ export class BeerPairingProvider extends Component {
 
     render() {
         const value = {
-            beerpairings: this.state.beerpairings,
+            beerPairings: this.state.beerPairings,
             comments: this.state.comments,
             setError: this.setError,
             clearError: this.clearError,
