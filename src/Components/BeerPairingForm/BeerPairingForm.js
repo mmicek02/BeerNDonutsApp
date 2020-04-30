@@ -1,20 +1,22 @@
 import React from 'react'
+import BeerPairingContext from '../../Context/BeerPairingContext'
 import { Link } from 'react-router-dom'
 
 import './BeerPairingForm.css'
 
 class BeerPairingForm extends React.Component {
+    static contextType = BeerPairingContext;
     constructor(props) {
         super(props);
         this.state = {
-            beerValue: '',
+            style: '',
             touched: false,
         }
     }
 
-    updateBeerValue = (BeerValue) => {
+    updateBeerStyle = (BeerStyle) => {
         this.setState({
-            beerValue: BeerValue,
+            style: BeerStyle,
             touched: true,
         })
     }
@@ -23,7 +25,7 @@ class BeerPairingForm extends React.Component {
         ev.preventDeafault();
         console.log(this.state)
         const pairingInfo = {
-            beerValue: this.state.beerValue
+            style: this.state.beerStyle
         }
 
         const url = 'http://localhost:8000/api/beerpairings/';
@@ -45,7 +47,7 @@ class BeerPairingForm extends React.Component {
         })
         .then(resJson => {
             this.context.users.push(resJson)
-            this.props.history.push(`/paringresults`)
+            this.props.history.push(`/paring-results`)
         })
         .catch(err => {
             this.setState({
@@ -60,15 +62,15 @@ class BeerPairingForm extends React.Component {
                 onSubmit={this.handleSubmit}>
                 <div>
                     <select 
-                        name='beer-style' 
-                        id='beer-style'>
+                        name='style' 
+                        id='beer_id'
+                        onChange={ev => this.updateBeerStyle(ev.target.value)}>
                         
-                        <option value="ipa">IPA</option>
-                        <option value="brown-ale">Bronwn Ale</option>
-                        <option value="stout">Stout</option>
-                        <option value="porter">Porter</option>
-                        <option value="sour">Sour</option>
-                        <option value="wheat-ale">Wheat Ale</option>
+                        <option value="">Choose a Beer</option>
+                            {this.context.beerpairings.map(beerName =>
+                                <option key={beerName.id} value={beerName.id}>
+                                    {beerName.style}
+                                </option>)}
                     </select>
                 </div>
 
