@@ -7,6 +7,7 @@ import BeerStyles from './Components/BeerStyles/BeerStyles';
 import DonutStyles from './Components/DonutStyle/DonutStyle';
 import LandingPage from './Routes/LandingPage/LandingPage';
 import config from './config'
+import AddCommentForm from './Components/AddCommentForm/AddCommentForm';
 
 class App extends Component {
   state = {
@@ -65,6 +66,9 @@ class App extends Component {
       <Route 
         path="/donut-styles"
         component={DonutStyles} />
+      <Route
+        path="add-comment"
+        component={AddCommentForm} />
       </>
     )
   }

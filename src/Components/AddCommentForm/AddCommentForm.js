@@ -1,6 +1,6 @@
 import React from 'react'
 import BeerPairingContext from '../../Context/BeerPairingContext'
-import BeerPairingApiService from '../../Context/BeerPairingApiService'
+import BeerPairingApiService from '../../Services/BeerPairingApiService'
 
 import './AddCommentForm.css'
 
@@ -9,7 +9,7 @@ class AddCommentForm extends React.Component {
         ev.preventDefault()
         const { beerPairing } = this.context
         const { text } = ev.target
-        BeerPairingApiService.postComment(beer.id, text.value)
+        BeerPairingApiService.postComment(beerPairing.id, text.value)
           .then(this.context.addComment)
           .then(() => {
             text.value = ''
