@@ -37,7 +37,7 @@ class App extends Component {
         path="/pairing-results"
         component={PairingResultsPage} />
       <Route 
-        path="/beer-styles"
+        path="/beerpairings"
         component={BeerStylePage} />
       <Route 
         path="/donut-styles"

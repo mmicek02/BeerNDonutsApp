@@ -21,7 +21,7 @@ class NavBar extends React.Component {
                         </Link>
                         <Link 
                             className="link__option"
-                            to='/beer-styles'>
+                            to='/beerpairings'>
                                 Beers
                         </Link>
                         <Link 
