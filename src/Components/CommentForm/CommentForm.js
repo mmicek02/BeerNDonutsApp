@@ -1,21 +1,23 @@
 import React from 'react'
-import BeerPairingContext from '../../Context/BeerPairingContext'
+import BeerContext from '../../Context/BeerContext'
 import BeerPairingApiService from '../../Services/BeerPairingApiService'
 
-import './AddCommentForm.css'
+import './CommentForm.css'
 
-class AddCommentForm extends React.Component {
-    handleSubmit = ev => {
-        ev.preventDefault()
-        const { beerPairing } = this.context
-        const { text } = ev.target
-        BeerPairingApiService.postComment(beerPairing.id, text.value)
-          .then(this.context.addComment)
-          .then(() => {
-            text.value = ''
-          })
-          .catch(this.context.setError)
-      }
+class CommentForm extends React.Component {
+  static contextType = BeerContext
+
+  handleSubmit = ev => {
+      ev.preventDefault()
+      const { beer } = this.context
+      const { text } = ev.target
+      BeerPairingApiService.postComment(beer.id, text.value)
+        .then(this.context.addComment)
+        .then(() => {
+          text.value = ''
+        })
+        .catch(this.context.setError)
+    }
     
       render() {
         return (
@@ -41,4 +43,4 @@ class AddCommentForm extends React.Component {
         )
       }
 }
-export default AddCommentForm
+export default CommentForm

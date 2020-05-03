@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import BeerPairingApiService from '../../Services/BeerPairingApiService'
-import BeerPairingContext from '../../Context/BeerPairingContext'
-import { Link } from 'react-router-dom'
+import BeerPairingListContext from '../../Context/BeerPairingListContext'
 
 import './BeerPairingForm.css'
 
 class BeerPairingForm extends Component {
-    static contextType = BeerPairingContext;
+    static contextType = BeerPairingListContext;
 
     componentDidMount() {
         this.context.clearError()
@@ -14,6 +13,12 @@ class BeerPairingForm extends Component {
             .then(this.context.setBeerPairings)
             .catch(this.context.setError)
     }
+
+    // renderBeers() {
+    //     const { beerPairings = [] } = this.context
+    //     return beerPairings.map(beer => 
+    //         )
+    // }
 
     constructor(props) {
         super(props);
@@ -40,7 +45,7 @@ class BeerPairingForm extends Component {
             style: this.state.style
         }
 
-        const url = 'http://localhost:8000/api/beerpairings';
+        const url = `http://localhost:8000/api/beerpairings`;
         const options = {
             method: 'GET',
             body: JSON.stringify.apply(pairingInfo),
@@ -68,7 +73,8 @@ class BeerPairingForm extends Component {
         })
     }
     render() {
-        const { beerpairings = [] } = this.context
+        const { beerPairings = [] } = this.context
+        console.log(BeerPairingApiService.getBeerPairings())
         return(
             <form 
                 className='beer__form'
@@ -80,10 +86,11 @@ class BeerPairingForm extends Component {
                         onChange={ev => this.updateBeerStyle(ev.target.value)}>
                         
                         <option value="">Choose a Beer</option>
-                            {beerpairings.map(beerName =>
+                            {/* {beerPairings.map(beerName =>
                                 <option key={beerName.id} value={beerName.id}>
                                     {beerName.style}
-                                </option>)}
+                                </option>)} */}
+                            {beerPairings.map(beerName => <option key={beerName.id} value={beerName.id}>{beerName.style}</option>)}
                     </select>
                 </div>
 

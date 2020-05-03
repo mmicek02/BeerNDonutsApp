@@ -1,35 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './BeerStyles.css'
 
-class BeerStyles extends React.Component {
+export default class BeerStyles extends Component {
     render(){
+        const { beer } = this.props
         return(
-            <>
-                <div className="flex-container">
-                    <span className="flex-item flex-item-1">
-                        <h3>Beer Name</h3>
-                        
-                    </span>
-                    <span className="flex-item flex-item-2">
-                        <h3>Beer Name</h3>
-
-                    </span>
-                    <span className="flex-item flex-item-3">
-                        <h3>Beer Name</h3>
-
-                    </span>
-                    <span className="flex-item flex-item-4">
-                        <h3>Beer Name</h3>
-
-                    </span>
-                    <span className="flex-item flex-item-5">
-                        <h3>Beer Name</h3>
-
-                    </span>
-                    <br />
-                </div>
-            </>
+            <Link to={`/api/beerpairing/${beer.id}`} className='BeerListItem'>
+                <header className='BeerListItem__header'>
+                    <h2 className='BeerListItem__heading'>
+                        {beer.style}
+                    </h2>
+                </header>
+            </Link>
         )
     }
 }
-export default BeerStyles
