@@ -6,7 +6,7 @@ import BeerStyles from '../../Components/BeerStyles/BeerStyles'
 export default class DonutStylePage extends Component {
     static contextType = BeerPairingListContext
 
-    compoenntDidMount() {
+    componentDidMount() {
         this.context.clearError()
         BeerPairingApiService.getBeerPairings()
             .then(this.context.setBeerPairings)

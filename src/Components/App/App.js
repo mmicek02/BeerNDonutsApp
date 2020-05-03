@@ -11,7 +11,6 @@ import DonutStyles from '../../Routes/DonutStylePage/DonutStylePage';
 
 import CommentForm from '../CommentForm/CommentForm';
 
-
 class App extends Component {
   state = {
     hasError: false
@@ -51,15 +50,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-        <header className='App__header'>
-          <NavBar/>
-        </header>
-        <main className='App__main'>
-          {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
-          {this.renderMainRoutes()}
-        </main>
-      </div>
+        <div className='App'>
+          <header className='App__header'>
+            <NavBar/>
+          </header>
+          <main className='App__main'>
+            {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
+            {this.renderMainRoutes()}
+          </main>
+        </div>
     );
   }
 

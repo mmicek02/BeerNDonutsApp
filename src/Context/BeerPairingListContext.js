@@ -5,12 +5,12 @@ const BeerPairingListContext = React.createContext({
     error: null,
     setError: () => {},
     clearError: () => {},
-    setBeerPairing: () => {},
+    setBeerPairingList: () => {},
 })
 
 export default BeerPairingListContext
 
-export class BeerPairingProvider extends Component {
+export class BeerPairingListProvider extends Component {
 
     state = {
         beerPairings: [],
@@ -36,7 +36,7 @@ export class BeerPairingProvider extends Component {
             error: this.state.error,
             setError: this.setError,
             clearError: this.clearError,
-            BeerPairingList: this.BeerPairingList
+            setBeerPairingList: this.setBeerPairingList
           }
           return (
             <BeerPairingListContext.Provider value={value}>

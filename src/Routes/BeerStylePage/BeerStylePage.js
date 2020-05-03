@@ -6,10 +6,10 @@ import BeerStyles from '../../Components/BeerStyles/BeerStyles'
 export default class BeerStylePage extends Component {
     static contextType = BeerPairingListContext
 
-    compoenntDidMount() {
+    componentDidMount() {
         this.context.clearError()
         BeerPairingApiService.getBeerPairings()
-            .then(this.context.setBeerPairings)
+            .then(this.context.setBeerPairingList)
             .catch(this.context.setError)
     }
 
@@ -18,7 +18,7 @@ export default class BeerStylePage extends Component {
         return beerPairings.map(beer => 
             <BeerStyles 
                 key={beer.id}
-                beer = { beer }
+                beer={beer}
             />)
     }
 
