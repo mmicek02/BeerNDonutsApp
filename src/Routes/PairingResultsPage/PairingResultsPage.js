@@ -31,7 +31,8 @@ export default class PairingResultsPage extends Component {
   renderPairing() {
     const { beer, comments } = this.context
     return <>
-      <h2>{beer.style}</h2>{' & '}<h2>{beer.donut_pairing}</h2>
+      <h2>{beer.style}</h2>{'&'}<h2>{beer.donut_pairing}</h2>
+      <h3>Comments</h3>
       <BeerPairingComments comments={comments} />
       <CommentForm />
     </>

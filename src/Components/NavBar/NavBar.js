@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../../Media/logo.jpg'
 import './NavBar.css'
 
 class NavBar extends React.Component {
     render() {
         return (
             <header>
-                <h1 className="logo">Beer 'N Donuts</h1>
+                <img src={logo} alt='Logo' className='logo' />
                 <nav>
                     <ul className="nav__links">
                         <Link

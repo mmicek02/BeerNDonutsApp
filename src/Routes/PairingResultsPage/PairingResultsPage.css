@@ -1,3 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 h2 {
-    padding: 30px 10%
+    padding: 10px 18%;
+    display: inline-block;
+}
+
+h3 {
+    padding: 30px 18%;
+}
+.PairingPage__comment-list {
+    /* padding-inline-start: 20px; */
+    list-style-type: none;
+    padding: 30px 10%;
+}
+
+.PairingPage__comment {
+    position: relative;
+    padding: 30px 10%;
+}
+
+.PairingPage__comment::before {
+    border-color: transparent #f5f5f5;
+    border-style: solid;
+    border-width: 0px 0px 10px 10px;
+    content: '';
+    display: block;
+    height: 0px;
+    position: absolute;
+    width: 0;
+    bottom: 14px;
+    right: 7px;
 }
