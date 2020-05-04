@@ -10,15 +10,10 @@ class BeerPairingForm extends Component {
     componentDidMount() {
         this.context.clearError()
         BeerPairingApiService.getBeerPairings()
-            .then(this.context.setBeerPairings)
+            .then(this.context.setBeerPairingList)
             .catch(this.context.setError)
     }
 
-    // renderBeers() {
-    //     const { beerPairings = [] } = this.context
-    //     return beerPairings.map(beer => 
-    //         )
-    // }
 
     constructor(props) {
         super(props);
@@ -39,7 +34,7 @@ class BeerPairingForm extends Component {
 
     handleSubmit = ev => {
         ev.preventDeafault();
-        console.log(this.state)
+        console.log(this.updateBeerStyle())
         const pairingInfo = {
             id: this.state.id,
             style: this.state.style
@@ -64,7 +59,7 @@ class BeerPairingForm extends Component {
         })
         .then(resJson => {
             this.context.users.push(resJson)
-            this.props.history.push(`/`)
+            this.props.history.push(`/pairing-results`)
         })
         .catch(err => {
             this.setState({
@@ -74,7 +69,6 @@ class BeerPairingForm extends Component {
     }
     render() {
         const { beerPairings = [] } = this.context
-        console.log(BeerPairingApiService.getBeerPairings())
         return(
             <form 
                 className='beer__form'

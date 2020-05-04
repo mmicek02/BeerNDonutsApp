@@ -33,17 +33,14 @@ class App extends Component {
         path="/pairings" 
         component={SelectBeer}/>
       <Route
-        path="/pairing-results"
+        path={'/beerpairings/:beerId'}
         component={PairingResultsPage} />
       <Route 
-        path="/beerpairings"
+        exact path="/beerpairings"
         component={BeerStylePage} />
       <Route 
         path="/donut-styles"
         component={DonutStyles} />
-      <Route
-        path="add-comment"
-        component={CommentForm} />
       </>
     )
   }

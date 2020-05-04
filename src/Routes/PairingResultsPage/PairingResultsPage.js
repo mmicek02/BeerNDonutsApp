@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 
 import BeerPairingApiService from '../../Services/BeerPairingApiService'
-import BeerPairingListContext from '../../Context/BeerPairingListContext'
+import BeerContext from '../../Context/BeerContext'
+import CommentForm from '../../Components/CommentForm/CommentForm'
 
 import './PairingResultsPage.css'
+
 
 export default class PairingResultsPage extends Component {
   static defaultProps = {
     match: { params: {} },
   }
   
-  static contextType = BeerPairingListContext
+  static contextType = BeerContext
   componentDidMount() {
     const { beerId } = this.props.match.params
     this.context.clearError()
     BeerPairingApiService.getBeerPairing(beerId)
-      .then(this.context.setBeerPairings)
+      .then(this.context.setBeer)
       .catch(this.context.setError)
     BeerPairingApiService.getBeerPairingsComments(beerId)
       .then(this.context.setComments)
@@ -23,16 +25,15 @@ export default class PairingResultsPage extends Component {
   }
 
   componentWillMount() {
-    this.context.clearBeerParing()
+    this.context.clearBeer()
   }
+
   renderPairing() {
     const { beer, comments } = this.context
     return <>
-      <h2>${beer.style}</h2>
-      <p>
-
-      </p>
+      <h2>{beer.style}</h2>{' & '}<h2>{beer.donut_pairing}</h2>
       <BeerPairingComments comments={comments} />
+      <CommentForm />
     </>
   }
 
