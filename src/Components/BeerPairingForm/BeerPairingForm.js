@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BeerPairingApiService from '../../Services/BeerPairingApiService'
 import BeerPairingListContext from '../../Context/BeerPairingListContext'
+import ValidationError from '../../ValidationError'
 
 import './BeerPairingForm.css'
 
@@ -24,26 +25,27 @@ class BeerPairingForm extends Component {
         }
     }
 
-    updateBeerStyle = (beer) => {
+    updateBeerStyle = (beerName) => {
         this.setState({
-            id: beer.id,
-            style: beer.style,
+            id: beerName.id,
+            style: beerName.style,
             touched: true,
         })
+
+        console.log(this.state)
     }
 
-    handleSubmit = ev => {
-        ev.preventDeafault();
-        console.log(this.updateBeerStyle())
+    handleSubmit = e => {
+        e.preventDeafault();
+
         const pairingInfo = {
             id: this.state.id,
             style: this.state.style
         }
-
-        const url = `http://localhost:8000/api/beerpairings`;
+        console.log(pairingInfo)
+        const url = `http://localhost:8000/api/beerpairings/`;
         const options = {
             method: 'GET',
-            body: JSON.stringify.apply(pairingInfo),
             headers: {
                 'content-type': 'application/json'
             }
@@ -58,8 +60,8 @@ class BeerPairingForm extends Component {
             return res.json();
         })
         .then(resJson => {
-            this.context.users.push(resJson)
-            this.props.history.push(`/pairing-results`)
+            //this.context.beerPairings.push(resJson)
+            this.props.history.push(`/beerpairings/${pairingInfo.id}`)
         })
         .catch(err => {
             this.setState({
@@ -67,32 +69,44 @@ class BeerPairingForm extends Component {
             })
         })
     }
+
+    validateBeerSelect() {
+        const beer = this.state.id;
+        if(beer === '') {
+          return 'You must choose a beer';
+        }
+    }
+
     render() {
         const { beerPairings = [] } = this.context
-        return(
-            <form 
-                className='beer__form'
-                onSubmit={this.handleSubmit}>
-                <div>
-                    <select 
-                        name='style' 
-                        id='beer_id'
-                        onChange={ev => this.updateBeerStyle(ev.target.value)}>
-                        
-                        <option value="">Choose a Beer</option>
-                            {/* {beerPairings.map(beerName =>
-                                <option key={beerName.id} value={beerName.id}>
-                                    {beerName.style}
-                                </option>)} */}
-                            {beerPairings.map(beerName => <option key={beerName.id} value={beerName.id}>{beerName.style}</option>)}
-                    </select>
-                </div>
+        const beerError = this.validateBeerSelect();
 
-                <button
-                    type='submit'
-                    className="beerSubmit"
-                    > Let's Get Tasting</button>
-            </form>
+        return(
+            <div>
+                <form 
+                    className='beer__form'
+                    onSubmit={this.handleSubmit}>
+                    <div>
+                        <select name='style' id='beer_id' onChange={e => this.updateBeerStyle(e.target.value)}>
+                            <option value="">Choose a Beer</option>
+                                {beerPairings.map(beerName => <option key={beerName.id} value={beerName.id}>{beerName.style}</option>)}
+                        </select>
+                    </div>
+
+                    <button
+                        type='submit'
+                        className="beerSubmit"
+                        onClick={e => this.handleSubmit(e)}
+                        disabled = {
+                            this.validateBeerSelect()
+                        }
+                        > Let's Get Tasting</button>  
+                </form>
+                <br />
+                <div className="errorText">
+                    {<ValidationError message={beerError} />}
+                </div>
+            </div>
         )
     }
 }
