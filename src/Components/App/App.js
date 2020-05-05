@@ -11,8 +11,11 @@ import DonutStyles from '../../Routes/DonutStylePage/DonutStylePage';
 import CommentForm from '../CommentForm/CommentForm';
 
 class App extends Component {
-  state = {
-    hasError: false
+  constructor(props) {
+    super(props)
+    this.state = {
+      hasError: false,
+    }
   }
 
   static getDerivedStateFromError(error) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BeerPairingApiService from '../../Services/BeerPairingApiService'
 import BeerPairingListContext from '../../Context/BeerPairingListContext'
 import ValidationError from '../../ValidationError'
-
+import PairingResultsPage from '../../Routes/PairingResultsPage/PairingResultsPage'
 import './BeerPairingForm.css'
 
 class BeerPairingForm extends Component {
@@ -63,10 +63,9 @@ class BeerPairingForm extends Component {
             return res.json();
         })
         .then(resJson => {
-            console.log(resJson)
-            this.context.beerPairings.push(resJson)
-            //window.location.href= `/beerpairings/${pairingInfo.id}`
-            this.props.history.push(`/beerpairings/${pairingInfo.id}`)
+            this.context.addBeerPairing(resJson)
+            window.location.href= `/beerpairings/${pairingInfo.id}`
+            //this.props.history.push(`/beerpairings/${pairingInfo.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -93,7 +92,7 @@ class BeerPairingForm extends Component {
                     className='beer__form'
                     onSubmit={this.handleSubmit}>
                     <div>
-                        <select name='beerId' id='beer_id' onChange={e => this.updateBeerId(e.target.value)} value={this.state.selectedBeer}>
+                        <select name='beerId' id='beer_id' onChange={e => this.updateBeerId(e.target.value)}>
                             <option value="">Choose a Beer</option>
                                 {beerPairings.map(beerId => <option key={beerId.id} value={beerId.id}>{beerId.style}</option>)}
                         </select>
