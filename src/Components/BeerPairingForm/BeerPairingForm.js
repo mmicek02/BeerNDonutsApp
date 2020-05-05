@@ -6,6 +6,12 @@ import ValidationError from '../../ValidationError'
 import './BeerPairingForm.css'
 
 class BeerPairingForm extends Component {
+    static defaultProps = {
+        history: {
+          push: () => {},
+        },
+    }
+    
     static contextType = BeerPairingListContext;
 
     componentDidMount() {
@@ -59,6 +65,7 @@ class BeerPairingForm extends Component {
         .then(resJson => {
             console.log(resJson)
             this.context.beerPairings.push(resJson)
+            //window.location.href= `/beerpairings/${pairingInfo.id}`
             this.props.history.push(`/beerpairings/${pairingInfo.id}`)
         })
         .catch(err => {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-
+import { Route, withRouter } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 
 import SelectBeer from '../../Routes/SelectBeer/SelectBeer'
@@ -61,4 +60,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default withRouter(App);
