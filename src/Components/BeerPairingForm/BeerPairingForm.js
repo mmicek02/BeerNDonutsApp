@@ -20,15 +20,13 @@ class BeerPairingForm extends Component {
         super(props);
         this.state = {
             id: '',
-            style: '',
             touched: false,
         }
     }
 
-    updateBeerStyle = (beerName) => {
+    updateBeerId = (beerId) => {
         this.setState({
-            id: beerName.id,
-            style: beerName.style,
+            id: beerId,
             touched: true,
         })
 
@@ -36,14 +34,13 @@ class BeerPairingForm extends Component {
     }
 
     handleSubmit = e => {
-        e.preventDeafault();
+        e.preventDefault();
 
         const pairingInfo = {
             id: this.state.id,
-            style: this.state.style
         }
-        console.log(pairingInfo)
-        const url = `http://localhost:8000/api/beerpairings/`;
+
+        const url = `http://localhost:8000/api/beerpairings/${pairingInfo.id}`;
         const options = {
             method: 'GET',
             headers: {
@@ -60,10 +57,12 @@ class BeerPairingForm extends Component {
             return res.json();
         })
         .then(resJson => {
-            //this.context.beerPairings.push(resJson)
+            console.log(resJson)
+            this.context.beerPairings.push(resJson)
             this.props.history.push(`/beerpairings/${pairingInfo.id}`)
         })
         .catch(err => {
+            console.log(err)
             this.setState({
                 error: err.message
             })
@@ -71,8 +70,8 @@ class BeerPairingForm extends Component {
     }
 
     validateBeerSelect() {
-        const beer = this.state.id;
-        if(beer === '') {
+        const selectedBeer = this.state.id;
+        if(selectedBeer === '') {
           return 'You must choose a beer';
         }
     }
@@ -87,16 +86,15 @@ class BeerPairingForm extends Component {
                     className='beer__form'
                     onSubmit={this.handleSubmit}>
                     <div>
-                        <select name='style' id='beer_id' onChange={e => this.updateBeerStyle(e.target.value)}>
+                        <select name='beerId' id='beer_id' onChange={e => this.updateBeerId(e.target.value)} value={this.state.selectedBeer}>
                             <option value="">Choose a Beer</option>
-                                {beerPairings.map(beerName => <option key={beerName.id} value={beerName.id}>{beerName.style}</option>)}
+                                {beerPairings.map(beerId => <option key={beerId.id} value={beerId.id}>{beerId.style}</option>)}
                         </select>
                     </div>
 
                     <button
                         type='submit'
                         className="beerSubmit"
-                        onClick={e => this.handleSubmit(e)}
                         disabled = {
                             this.validateBeerSelect()
                         }
