@@ -40,9 +40,6 @@ class App extends Component {
       <Route 
         exact path="/beerpairings"
         component={BeerStylePage} />
-      <Route 
-        path="/donut-styles"
-        component={DonutStyles} />
       </>
     )
   }
