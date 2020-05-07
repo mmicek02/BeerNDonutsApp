@@ -1,3 +1,3 @@
 export default {
-    API_ENDPOINT: `http://morning-mountain-37470.herokuapp.com/api`,
+    API_ENDPOINT: `https://morning-mountain-37470.herokuapp.com/api`,
   }

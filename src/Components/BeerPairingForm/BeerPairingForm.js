@@ -46,7 +46,7 @@ class BeerPairingForm extends Component {
             id: this.state.id,
         }
 
-        const url = `http://lmorning-mountain-37470.herokuapp.com/api/beerpairings/${pairingInfo.id}`;
+        const url = `https://morning-mountain-37470.herokuapp.com/api/beerpairings/${pairingInfo.id}`;
         const options = {
             method: 'GET',
             headers: {
