@@ -28,11 +28,6 @@ class NavBar extends React.Component {
                             to='/beerpairings'>
                                 Beers
                         </Link>
-                        <Link 
-                            className="link__option"
-                            to='/donut-styles'>
-                                Donuts
-                        </Link>
                     </ul>
                 </nav>
             </header>
