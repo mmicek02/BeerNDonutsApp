@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import AddCommentForm from '../../Components/AddCommentForm/AddCommentForm'
+import CommentForm from '../../Components/CommentForm/CommentForm'
 
 describe(`AddCommentForm component`, () => {
 
   it('renders without errors', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-            <AddCommentForm />,div);
+            <CommentForm />,div);
     ReactDOM.unmountComponentAtNode(div);
   })
 
