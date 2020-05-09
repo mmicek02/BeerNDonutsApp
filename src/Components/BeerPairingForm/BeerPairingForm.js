@@ -104,7 +104,7 @@ class BeerPairingForm extends Component {
                         disabled = {
                             this.validateBeerSelect()
                         }
-                        > Let's Get Tasting</button>  
+                        > Discover Pairing</button>  
                 </form>
                 <br />
                 <div className="errorText">

@@ -4,6 +4,26 @@
     padding: 0;
 }
 
+@media screen and (max-width: 768px) {
+    .beer__form {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 150px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .errorText {
+        position: absolute;
+        left: -5%;
+        top: 40%;
+        text-align: center;
+        color: red;
+    }
+}
+
 .beer__form {
     position: absolute;
     display: flex;

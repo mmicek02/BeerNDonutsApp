@@ -4,8 +4,16 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-    /* .SelectBeer {
+    h2 {
+        position: absolute;
+        margin: auto;
+        padding-bottom: 1em;
+        left: 15%;
+        color: red;
+    }
+    .SelectBeer {
         display: flex;
         align-items: center;
-    } */
+        padding-top: 40px;
+    }
 }
