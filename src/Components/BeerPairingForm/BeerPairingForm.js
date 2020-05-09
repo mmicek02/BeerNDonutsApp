@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import BeerPairingApiService from '../../Services/BeerPairingApiService'
 import BeerPairingListContext from '../../Context/BeerPairingListContext'
 import ValidationError from '../../ValidationError'
-import PairingResultsPage from '../../Routes/PairingResultsPage/PairingResultsPage'
 import './BeerPairingForm.css'
 
 class BeerPairingForm extends Component {

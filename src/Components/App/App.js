@@ -6,9 +6,6 @@ import SelectBeer from '../../Routes/SelectBeer/SelectBeer'
 import LandingPage from '../../Routes/LandingPage/LandingPage';
 import PairingResultsPage from '../../Routes/PairingResultsPage/PairingResultsPage';
 import BeerStylePage from '../../Routes/BeerStylePage/BeerStylePage';
-import DonutStyles from '../../Routes/DonutStylePage/DonutStylePage';
-
-import CommentForm from '../CommentForm/CommentForm';
 
 class App extends Component {
   constructor(props) {
