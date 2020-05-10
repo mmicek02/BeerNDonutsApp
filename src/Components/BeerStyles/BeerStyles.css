@@ -16,9 +16,18 @@
         width: 100%;
         text-decoration: none;
     }
+
+    .BeerListItem__header {
+        align-items: baseline;
+        display: flex;
+        justify-content: space-between;
+        padding: 70px;
+    }
+
     .BeerListItem__heading {
         margin: 0;
         padding: 10px 10%;
+        color: #f0f0f0;
     }
 }
 .BeerListItem {
