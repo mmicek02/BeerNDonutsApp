@@ -25,7 +25,6 @@ export default class SelectBeer extends Component {
   render() {
     return (
       <div className='SelectBeer'>
-        <h2>Find a perfect paring!</h2>
         <br />
         <BeerPairingForm />
       </div>

@@ -21,7 +21,7 @@ class NavBar extends React.Component {
                         <Link 
                             className="link__option"
                             to='/pairings'>
-                                Pairings
+                                Discover
                         </Link>
                         <Link 
                             className="link__option"

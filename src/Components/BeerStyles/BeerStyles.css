@@ -7,8 +7,9 @@
 .BeerListItem {
     background: none;
     border: 0;
-    border-bottom: 1px solid #3f455038;
+    border-bottom: 3px solid #ff51f0;
     font-size: smaller;
+    color: #f0f0f0;
     display: block;
     padding: 10px 10px 0;
     text-align: left;

@@ -27,7 +27,7 @@ export default class BeerStylePage extends Component {
         return (
             <div>
             {error
-                ? <p className='red'>There was an error, try again</p>
+                ? <p color="red" className='red'>There was an error, try again</p>
                 : this.renderBeerStyles()}
             </div>
         )
