@@ -3,8 +3,50 @@
     margin: 0;
     padding: 0;
 }
-
 .CommentForm {
-    padding: 30px 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.CommentForm input {
+  max-width: 300px;
+  padding: 15px;
+  border: #ff51f0 3px solid;
+  border-radius: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #f0f0f0;
+}
+.CommentForm__submit {
+    padding: 15px 5%;
     text-align: right;
+    margin-top: 50px;
+    font-size: .75em;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+    1px 13px 6px rgba(16,16,16,0.2),
+    1px 18px 10px rgba(16,16,16,0.1),
+    1px 20px 35px rgba(16,16,16,0.2);
+
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+CommentForm__submit::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+    background: #ff51f0;
+    transition: width .3s;
+}
+CommentForm__submit:hover::after {
+    width: 100%;
+    transition: width .3s;
 }

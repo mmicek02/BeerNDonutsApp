@@ -25,7 +25,7 @@ class CommentForm extends React.Component {
             className='CommentForm'
             onSubmit={this.handleSubmit}
           >
-            <div className='text'>
+            <div class='text'>
               <input
                 required
                 aria-label='Type a comment...'
@@ -36,7 +36,7 @@ class CommentForm extends React.Component {
                 placeholder='Type a comment..'>
               </input>
             </div>
-            <button type='submit'>
+            <button type='submit' className="CommentForm__submit">
               Post comment
             </button>
           </form>

@@ -17,7 +17,7 @@
     1px 13px 6px rgba(16,16,16,0.2),
     1px 18px 10px rgba(16,16,16,0.1);
 }
-.flex-container {
+.flex-container__landingPage {
     display: flex;
     flex-direction: column;
     align-items: center;
