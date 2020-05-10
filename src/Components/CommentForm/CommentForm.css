@@ -4,12 +4,13 @@
     padding: 0;
 }
 .CommentForm {
+  padding: 30px 10%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 .CommentForm input {
-  max-width: 300px;
+  max-width: 500px;
   padding: 15px;
   border: #ff51f0 3px solid;
   border-radius: 15px;

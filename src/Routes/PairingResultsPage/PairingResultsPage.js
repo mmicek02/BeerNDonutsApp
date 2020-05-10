@@ -32,7 +32,7 @@ export default class PairingResultsPage extends Component {
     const { beer, comments } = this.context
     return <>
       <div className='flex-container'>
-        <div className='flex-containter__header'>
+        <div className='flex-container__header'>
           {beer.style}{'&'}{beer.donut_pairing}
         </div>
       </div>
