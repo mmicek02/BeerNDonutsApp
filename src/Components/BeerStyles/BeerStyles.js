@@ -25,9 +25,6 @@ export default class BeerStyles extends Component {
                     <h2 className='BeerListItem__heading'>
                         {beer.style}
                     </h2>
-                    <p>
-                        {beer.tasting_notes}
-                    </p>
                 </header>
             </Link>
         )
