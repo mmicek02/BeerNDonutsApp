@@ -4,10 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Project Details
 
 ### Screenshots
-!['LandingPage'](./src/Media/Screenshots/landingPage.png)
+<img src ="./src/Media/Screenshots/landingPage.png" alt="Landing Page" width="300px">
 <img src ="./src/Media/Screenshots/searchPage.png" alt="Search Page" width="300px">
 <img src ="./src/Media/Screenshots/resultsPage.png" alt="Results Page" width="300px">
-
+<img src ="./src/Media/Screenshots/altSearchPage.png" alt="Alt Search Page" width="300px">
 ### Summary
 This apps helps you navigate the world of beer and donut pairings. 
 

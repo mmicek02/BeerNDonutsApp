@@ -3,7 +3,24 @@
     margin: 0;
     padding: 0;
 }
-
+@media screen and (max-width: 768px) {
+    .BeerListItem {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid #ff51f0;
+        font-size: smaller;
+        color: #f0f0f0;
+        display: block;
+        padding: 10px 10px 0;
+        text-align: left;
+        width: 100%;
+        text-decoration: none;
+    }
+    .BeerListItem__heading {
+        margin: 0;
+        padding: 10px 10%;
+    }
+}
 .BeerListItem {
     background: none;
     border: 0;
