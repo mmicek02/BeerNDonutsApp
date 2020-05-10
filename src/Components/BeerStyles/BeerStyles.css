@@ -19,12 +19,12 @@
 
 .BeerListItem:hover {
     cursor: pointer;
-    background-color: #f7f8f9;
+    background-color: #ff51f0;
 }
   
 .BeerListItem,
 .BeerListItem:visited {
-    color: #555;
+    color: #9e1993;
 }
   
 .BeerListItem__header {

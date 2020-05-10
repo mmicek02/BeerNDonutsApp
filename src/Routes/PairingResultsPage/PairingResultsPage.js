@@ -33,7 +33,7 @@ export default class PairingResultsPage extends Component {
     return <>
       <div className='flex-container'>
         <div className='flex-container__header'>
-          {beer.style}{'&'}{beer.donut_pairing}
+          {beer.style}<br />{' & '}<br />{beer.donut_pairing}
         </div>
       </div>
       {/* <h2>{beer.style}</h2>{'&'}<h2>{beer.donut_pairing}</h2> */}
