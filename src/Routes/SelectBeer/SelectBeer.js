@@ -17,11 +17,6 @@ export default class SelectBeer extends Component {
           .catch(this.context.setError)
   }
 
-  // renderBeers() {
-  //     const { beerPairings = [] } = this.context
-  //     return beerPairings.map(beer => 
-  //     )
-  // }
   render() {
     return (
       <div className='SelectBeer'>

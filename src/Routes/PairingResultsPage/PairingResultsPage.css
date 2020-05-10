@@ -14,7 +14,6 @@
   }
   
   .flex-container__header {
-      /* position: absolute; */
       text-transform: uppercase;
       font-size: 2em;
       font-weight: 700;
@@ -52,7 +51,6 @@ p {
 }
 
 .PairingPage__comment-list {
-    /* padding-inline-start: 20px; */
     list-style-type: none;
     padding: 30px 10%;
 }
