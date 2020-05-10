@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Project Details
 
 ### Screenshots
-<img src ="./src/Media/Screenshots/landingPage" alt="Landing Page" width="300px">
+!['LandingPage'](./src/Media/Screenshots/landingPage)
 <img src ="./src/Media/Screenshots/searchPage" alt="Search Page" width="300px">
 <img src ="./src/Media/Screenshots/resultsPage" alt="Results Page" width="300px">
 
